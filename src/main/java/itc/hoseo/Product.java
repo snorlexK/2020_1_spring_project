@@ -1,6 +1,6 @@
 package itc.hoseo;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,13 +12,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
-	private String id;
+	private int id;
 	private String name;
 	private String category;
 	private int price;
 	private String description;
-	private Timestamp uploadDate;
-	private Timestamp soldDate;
-	private String image;
+	private Date uploadDate;
 	private String userId;
+	private String location1;
+	private String location2;
+	private Date soldDate;
+	private String image;
 }

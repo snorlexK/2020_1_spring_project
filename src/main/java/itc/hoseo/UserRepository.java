@@ -17,8 +17,6 @@ public class UserRepository {
 				+ "id varchar(30) primary key, "
 				+ "password varchar(30) not null, "
 				+ "nickname varchar(30) not null unique, "
-				+ "location1 varchar(10) not null, "
-				+ "location2 varchar(10) not null, "
 				+ "registeredDate date not null"
 				+ ")";
 		try (Connection con = dbConnect(); PreparedStatement pstmt = con.prepareStatement(sql);) {
@@ -26,14 +24,12 @@ public class UserRepository {
 		} catch(Exception e) {
 			throw new RuntimeException("테이블 생성 오류", e);
 		}
-		sql = "insert into user values(?, ?, ?, ?, ?, ?)";
+		sql = "insert into user values(?, ?, ?, ?)";
 		try(Connection con = dbConnect(); PreparedStatement pstmt = con.prepareStatement(sql);) {
 			pstmt.setString(1, "sample");
 			pstmt.setString(2, "1234");
 			pstmt.setString(3, "샘플");
-			pstmt.setString(4, "서울시");
-			pstmt.setString(5, "강남구");
-			pstmt.setDate(6, new java.sql.Date(new Date().getTime()));
+			pstmt.setDate(4, new java.sql.Date(new Date().getTime()));
 			pstmt.executeUpdate();
 		} catch(Exception e) {
 			throw new RuntimeException("샘플 데이터 삽입 오류", e);
@@ -50,17 +46,15 @@ public class UserRepository {
 	 * @param user 저장할 회원 정보
 	 * @return 저장 성공하면 true, 실패하면 false
 	 */
-	public boolean register(User user) {
+	public boolean add(User user) {
 		int cnt = 0;
-		String sql = "insert into user values(?, ?, ?, ?, ?, ?)";
+		String sql = "insert into user values(?, ?, ?, ?)";
 		try (Connection con = dbConnect(); PreparedStatement pstmt = con.prepareStatement(sql);) {
 			java.sql.Date date = new java.sql.Date(user.getRegisteredDate().getTime()); 
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPassword());
 			pstmt.setString(3, user.getNickname());
-			pstmt.setString(4, user.getLocation1());
-			pstmt.setString(5, user.getLocation2());
-			pstmt.setDate(6, date);
+			pstmt.setDate(4, date);
 			
 			cnt = pstmt.executeUpdate();
 		} catch(Exception e) {
@@ -85,8 +79,6 @@ public class UserRepository {
 						.id(rs.getString("id"))
 						.password(rs.getString("password"))
 						.nickname(rs.getString("nickname"))
-						.location1(rs.getString("location1"))
-						.location2(rs.getString("location2"))
 						.registeredDate(rs.getDate("registeredDate"))
 						.build();
 				users.add(user);

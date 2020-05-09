@@ -16,11 +16,9 @@ public class UserTest {
 				.id("sample12")
 				.password("1234")
 				.nickname("샘플12")
-				.location1("서울시")
-				.location2("강서구")
 				.registeredDate(new Date())
 				.build();
-		repo.register(user);
+		repo.add(user);
 		assertEquals("sample", repo.list().get(0).getId());
 		repo.delete("sample12");
 		assertEquals(1, repo.list().size());
