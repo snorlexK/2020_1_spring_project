@@ -18,6 +18,7 @@ public class Product {
 	private int price;
 	private String description;
 	private Date uploadDate;
+	private Date updateDate;
 	private String userId;
 	private String location1;
 	private String location2;
