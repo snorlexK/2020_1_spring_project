@@ -11,12 +11,8 @@ import org.springframework.data.repository.CrudRepository;
  * @author pjh04
  *
  */
-public interface UserRepository extends CrudRepository<User, String> {
-	
-	User findByNickname(String nickname);
-	//페이징
-	List<User> findAll(Pageable page);
-	//Like 검색
-	List<User> findByNicknameContains(String nickname, Pageable page);
+public interface CommentRepository extends CrudRepository<Comment, Long> {
+	List<Comment> findByUser(User user, Pageable page);
+	List<Comment> findByProduct(User user, Pageable page);
 }
 
