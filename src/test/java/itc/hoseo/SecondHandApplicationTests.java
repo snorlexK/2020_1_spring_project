@@ -32,13 +32,13 @@ class SecondHandApplicationTests {
 		));
 		
 		Product p1 = new Product(null, "스위치 네온 구형", "게임", 200000, "옛날에 사두고 두어번 쓰고 안 쓴 제품입니다.",
-				new Date(), null, userRepo.findByNickname("김현재"), "서울시 강서구", "마곡동", null, null, null);
+				new Date(), null, userRepo.findByNickname("김현재"), "서울",  null, null, null);
 		Product p2 = new Product(null, "파이썬 책", "서적", 7000, "중고감 약간 있는 파이썬 책 팝니다",
-				new Date(), null, userRepo.findByNickname("테스트"), "서울시 강서구", "마곡동", null, null, null);
+				new Date(), null, userRepo.findByNickname("테스트"), "서울",  null, null, null);
 		Product p3 = new Product(null, "닌텐도 스위치 포켓몬스터 소드", "게임", 25000, "별로 안썼구요 케이스 포함입니다",
-				new Date(), null, userRepo.findByNickname("테스트"), "경기도 안양시", "범계동", null, null, null);
+				new Date(), null, userRepo.findByNickname("테스트"), "경기", null, null, null);
 		Product p4 = new Product(null, "링피트", "게임", 100000, "링, 게임팩만 팝니다. 본체 X",
-				new Date(), null, userRepo.findByNickname("테스트"), "경기도 안양시", "호계동", null, null, null);
+				new Date(), null, userRepo.findByNickname("테스트"), "경기", null, null, null);
 		productRepo.saveAll(Lists.list(
 				p1, p2, p3, p4
 		));

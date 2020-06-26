@@ -17,8 +17,7 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 	List<Product> findAll(Pageable page);
 	List<Product> findByCategory(String category, Pageable page);
 	List<Product> findByUserId(String userId, Pageable page);
-	List<Product> findByLocation1(String location1, Pageable page);
-	List<Product> findByLocation2(String location2, Pageable page);
+	List<Product> findByLocation(String location, Pageable page);
 	//Like 검색
 	List<Product> findByNameContains(String name, Pageable page);
 }

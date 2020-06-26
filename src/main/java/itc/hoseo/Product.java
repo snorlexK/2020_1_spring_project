@@ -61,10 +61,7 @@ public class Product {
 	private User user;
 	
 	@Column(length = 20, nullable = false)
-	private String location1;
-	
-	@Column(length = 20, nullable = false)
-	private String location2;
+	private String location;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column
