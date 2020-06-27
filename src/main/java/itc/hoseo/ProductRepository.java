@@ -1,6 +1,7 @@
 package itc.hoseo;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
@@ -12,7 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  *
  */
 public interface ProductRepository extends CrudRepository<Product, Long> {
-	
 	//페이징
 	List<Product> findAll(Pageable page);
 	List<Product> findByCategory(String category, Pageable page);

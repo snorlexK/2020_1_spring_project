@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,22 +45,21 @@
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-3"><a href="index.html">당근나라</a></div>
+          <div class="site-logo col-3"><a href="/">당근나라</a></div>
 
           <nav class="site-navigation col-3">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.html">메인 화면</a></li>
-              <li><a href="list.html">모든 물건</a></li>
-              <li><a href="mypage.html">내 정보</a></li>
-              <li class="d-lg-none"><a href="post.html"><span class="mr-2">+</span> 물건 등록하기</a></li>
-              <li class="d-lg-none"><a href="login.html">로그인</a></li>
+              <li><a href=""></a></li>
+              <li><a href="/">메인 화면</a></li>
+              <li><a href="/list">모든 물건</a></li>
+              <li><a href="/mypage" class="nav-link active">내 정보</a></li>
             </ul>
           </nav>
           
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-3">
             <div class="ml-auto">
-              <a href="post.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>물건 등록하기</a>
-              <a href="login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>로그인</a>
+              <a href="/post" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>물건 등록하기</a>
+              <a href="/login" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>로그인</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -75,91 +73,39 @@
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h1 class="text-white font-weight-bold">물건 등록하기</h1>
+            <h1 class="text-white font-weight-bold">내 정보</h1>
             <div class="custom-breadcrumbs">
               <a href="index.html">메인 화면</a> <span class="mx-2 slash">/</span>
-              <a href="list.html">모든 물건</a> <span class="mx-2 slash">/</span>
-              <span class="text-white"><strong>물건 등록하기</strong></span>
+              <span class="text-white"><strong>내 정보</strong></span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    
-    <section class="site-section">
+    <section class="site-section" id="next-section">
       <div class="container">
-
-        <div class="row align-items-center mb-5">
-          <div class="col-lg-8 mb-4 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <div>
-                <h2>물건 등록하기</h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="row">
-              <div class="col-6">
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md">등록</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-5">
-          <div class="col-lg-12">
-            <form class="p-4 p-md-5 border rounded" method="post">
-              <h3 class="text-black mb-5 border-bottom pb-2">물건 정보</h3>
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h3>내가 올린 물건</h3>
+            <div class="p-4 mb-3 bg-white">
+              <p class="mb-0 font-weight-bold">닌텐도 스위치 네온</p>
+              <p class="mb-4">작년에 사둔 구형 모델입니다. 사용 거의 하지 않았으며...</p>
               
-              <div class="form-group">
-                <label for="company-website-tw d-block">이미지 업로드</label> <br>
-                <label class="btn btn-primary btn-md btn-file">
-                  	파일 등록<input type="file" hidden>
-                </label>
-              </div>
-
-              <div class="form-group">
-                <label for="name">이름</label>
-                <input type="text" class="form-control" id="name" placeholder="물건 이름">
-              </div>
-              <div class="form-group">
-                <label for="category">카테고리</label>
-                <select class="selectpicker border rounded" id="category" data-style="btn-black" data-width="100%" data-live-search="true" title="카테고리 선택">
-                      <option>의류</option>
-                      <option>가구/생활</option>
-                      <option>전자/가전</option>
-                      <option>뷰티/잡화</option>
-                      <option>완구/취미</option>
-                      <option>스포츠/레저</option>
-                      <option>도서</option>
-                      <option>기타</option>
-                    </select>
-              </div>
-              <div class="form-group">
-                <label for="price">가격</label>
-                <input type="text" class="form-control" id="price" placeholder="가격 (숫자만 입력)">
-              </div>
-              <div class="form-group">
-                <label for="location">지역</label>
-                <input type="text" class="form-control" id="지역" placeholder="e.g. 서울, 부산, 강원">
-              </div>
-              <div class="form-group">
-                <label for="description">상세 설명</label>
-                <div class="editor" id="editor-1">
-                  <p></p>
-                </div>
-              </div>
-
-            </form>
+              <p class="mb-0 font-weight-bold">청바지</p>
+              <p class="mb-4">무난한 청바지입니다. 사이즈가 안맞아 판매합니다. </p>
+            </div>
           </div>
-         
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h3>내가 단 댓글</h3>
+            <div class="p-4 mb-3 bg-white">
+              <p class="mb-0 font-weight-bold">로지텍 유선 마우스, 서울, 70,000</p>
+              <p class="mb-4">혹시 택배 거래 가능한가요?</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    
     
     <footer class="site-footer">
 

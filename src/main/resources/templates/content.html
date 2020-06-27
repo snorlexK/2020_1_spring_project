@@ -1,23 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>JobBoard &mdash; Website Template by Colorlib</title>
+    <title>당근나라</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Free-Template.co" />
+    <link rel="shortcut icon" href="ftco-32x32.png">
     
-    
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/quill.snow.css">
-    
+    <link rel="stylesheet" th:href="@{/css/custom-bs.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.min.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap-select.min.css}">
+    <link rel="stylesheet" th:href="@{/fonts/icomoon/style.css}">
+    <link rel="stylesheet" th:href="@{/fonts/line-icons/style.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.min.css}">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" th:href="@{/css/style.css}">    
   </head>
   <body id="top">
 
@@ -45,22 +46,21 @@
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-3"><a href="index.html">당근나라</a></div>
+          <div class="site-logo col-3"><a href="/">당근나라</a></div>
 
           <nav class="site-navigation col-3">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.html">메인 화면</a></li>
-              <li><a href="list.html">모든 물건</a></li>
-              <li><a href="mypage.html" class="nav-link active">내 정보</a></li>
-              <li class="d-lg-none"><a href="post.html"><span class="mr-2">+</span> 물건 등록하기</a></li>
-              <li class="d-lg-none"><a href="login.html">로그인</a></li>
+              <li><a href=""></a></li>
+              <li><a href="/">메인 화면</a></li>
+              <li><a href="/list">모든 물건</a></li>
+              <li><a href="/mypage">내 정보</a></li>
             </ul>
           </nav>
           
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-3">
             <div class="ml-auto">
-              <a href="post.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>물건 등록하기</a>
-              <a href="login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>로그인</a>
+              <a href="/post" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>물건 등록하기</a>
+              <a href="/login" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>로그인</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -74,40 +74,71 @@
       <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h1 class="text-white font-weight-bold">내 정보</h1>
+            <h1 class="text-white font-weight-bold" th:text="${product.name}"></h1>
             <div class="custom-breadcrumbs">
-              <a href="index.html">메인 화면</a> <span class="mx-2 slash">/</span>
-              <span class="text-white"><strong>내 정보</strong></span>
+              <a href="/">메인 화면</a> <span class="mx-2 slash">/</span>
+              <a href="/list">모든 물건</a> <span class="mx-2 slash">/</span>
+              <span class="text-white"><strong th:text="${product.name}"></strong></span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="site-section" id="next-section">
+    
+    <section class="site-section">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <h3>내가 올린 물건</h3>
-            <div class="p-4 mb-3 bg-white">
-              <p class="mb-0 font-weight-bold">닌텐도 스위치 네온</p>
-              <p class="mb-4">작년에 사둔 구형 모델입니다. 사용 거의 하지 않았으며...</p>
-              
-              <p class="mb-0 font-weight-bold">청바지</p>
-              <p class="mb-4">무난한 청바지입니다. 사이즈가 안맞아 판매합니다. </p>
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <div class="border p-2 d-inline-block mr-3 rounded">
+                <img src="images/job_logo_5.jpg" alt="Image">
+              </div>
+              <div>
+                <h2 th:text="${product.name}"></h2>
+                <div>
+                <span class="m-2" th:text="${product.category}"><span class="icon-room mr-2"></span></span>
+                  <span class="m-2" th:text="${product.location}"><span class="icon-room mr-2"></span></span>
+                  <span class="m-2">판매 중</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <h3>내가 단 댓글</h3>
-            <div class="p-4 mb-3 bg-white">
-              <p class="mb-0 font-weight-bold">로지텍 유선 마우스, 서울, 70,000</p>
-              <p class="mb-4">혹시 택배 거래 가능한가요?</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="mb-5">
+              <figure class="mb-5"><img src="images/job_single_img_1.jpg" alt="Image" class="img-fluid rounded"></figure>
+              <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-align-left mr-3"></span>물건 정보</h3>
+              <p th:text="| *{product.category} / *{product.location} / *{product.price}원|"></p>
+              <p th:text="${product.description}"></p>
             </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bg-light p-3 border rounded mb-4">
+              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">판매자 정보</h3>
+              <ul class="list-unstyled pl-3 mb-0">
+                <li class="mb-2"><strong class="text-black">ID: </strong><span th:text="${product.user.id}"></span></li>
+                <li class="mb-2"><strong class="text-black">닉네임: </strong><span th:text="${product.user.nickname}"></span></li>
+              </ul>
+              <a href="#" class="btn btn-block btn-primary btn-md">자세히</a>
+            </div>
+
+            <div class="bg-light p-3 border rounded">
+              <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Share</h3>
+              <div class="px-3">
+                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-facebook"></span></a>
+                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-twitter"></span></a>
+                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-linkedin"></span></a>
+                <a href="#" class="pt-3 pb-3 pr-3 pl-0"><span class="icon-pinterest"></span></a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
-    
+
     <footer class="site-footer">
 
       <a href="#top" class="smoothscroll scroll-top">
@@ -179,14 +210,11 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/quill.min.js"></script>
-    
     
     <script src="js/bootstrap-select.min.js"></script>
     
     <script src="js/custom.js"></script>
-   
-   
+
      
   </body>
 </html>

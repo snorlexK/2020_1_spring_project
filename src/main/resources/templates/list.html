@@ -1,6 +1,5 @@
-
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>당근나라</title>
     <meta charset="utf-8">
@@ -10,16 +9,16 @@
     <meta name="author" content="Free-Template.co" />
     <link rel="shortcut icon" href="ftco-32x32.png">
     
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" th:href="@{/css/custom-bs.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.min.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap-select.min.css}">
+    <link rel="stylesheet" th:href="@{/fonts/icomoon/style.css}">
+    <link rel="stylesheet" th:href="@{/fonts/line-icons/style.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.min.css}">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" th:href="@{/css/style.css}">    
   </head>
   <body id="top">
 
@@ -47,22 +46,21 @@
     <header class="site-navbar mt-3">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-3"><a href="index.html">당근나라</a></div>
+          <div class="site-logo col-3"><a href="/">당근나라</a></div>
 
           <nav class="site-navigation col-3">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.html" class="nav-link active">메인 화면</a></li>
-              <li><a href="list.html">모든 물건</a></li>
-              <li><a href="mypage.html">내 정보</a></li>
-              <li class="d-lg-none"><a href="post.html"><span class="mr-2">+</span> 물건 등록하기</a></li>
-              <li class="d-lg-none"><a href="login.html">로그인</a></li>
+              <li><a href=""></a></li>
+              <li><a href="/">메인 화면</a></li>
+              <li><a href="/list" class="nav-link active">모든 물건</a></li>
+              <li><a href="/mypage">내 정보</a></li>
             </ul>
           </nav>
           
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-3">
             <div class="ml-auto">
-              <a href="post.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>물건 등록하기</a>
-              <a href="login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>로그인</a>
+              <a href="/post" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>물건 등록하기</a>
+              <a href="/login" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>로그인</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -72,44 +70,63 @@
     </header>
 
     <!-- HOME -->
-    <section class="home-section section-hero overlay bg-image" style="background-image: url('images/e-commerce.png');" id="home-section">
-
+    <section class="site-section" id="next" style="background-image: url('images/e-commerce2.jpg');">
       <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-12">
-            <div class="mb-5 text-center">
-              <h1 class="text-white font-weight-bold">가장 쉬운 중고 거래</h1>
-              <p>원하는 물건을, 원하는 곳에서, 원하는 가격으로</p>
-            </div>
-            <form method="post" class="search-jobs-form">
-              <div class="row mb-5">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0" style="max-width:20%">
-                  <input type="text" class="form-control form-control-lg" name="productName" placeholder="물건 이름">
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0" style="max-width:20%">
-                  <input type="text" class="form-control form-control-lg" name="productLocation" placeholder="지역">
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0" style="max-width:20%">
-                  <input type="text" class="form-control form-control-lg" name="productPriceMin" placeholder="최소 가격">
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0" style="max-width:20%">
-                  <input type="text" class="form-control form-control-lg" name="productPriceMax" placeholder="최대 가격">
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0" style="max-width:20%">
-                  <button type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>검색</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 popular-keywords">
-                  <h3>입력되지 않은 조건은 모두 검색됩니다. 예를 들어, 지역을 비워두면 모든 지역을 대상으로 검색됩니다.</h3>
-                </div>
-              </div>
-            </form>
+
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+          	<h2>&nbsp;</h2>
+            <h2 class="section-title mb-2" style="color:#fff">물건 목록</h2>
           </div>
         </div>
+        
+        <ul class="job-listings mb-5" th:each="p : ${products}">
+          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+          
+            <a th:href="|/content?product_id=*{p.id}|"></a>
+            <div class="job-listing-logo">
+              <img src="images/job_logo_1.jpg" alt="Image" class="img-fluid">
+            </div>
+
+            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                <h2 th:text="${p.name}"></h2>
+                <strong th:text="|*{p.category}, *{p.price}원|"></strong>
+              </div>
+              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                <span class="icon-room"></span> <span th:text="${p.location}"></span>
+              </div>
+              <div class="job-listing-meta">
+                <span class="badge badge-danger">Part Time</span>
+              </div>
+            </div>
+            
+          </li>
+        </ul>
+
+        <div class="row pagination-wrap">
+          <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+            <span></span>
+          </div>
+          <div class="col-md-6 text-center text-md-right">
+            <div class="custom-pagination ml-auto">
+              <a href="#" class="prev">이전</a>
+              <div class="d-inline-block">
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              </div>
+              <a href="#" class="next">다음</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
+    
     <footer class="site-footer">
+
       <div class="container">
         <div class="row mb-5">
           <div class="col-6 col-md-3 mb-4 mb-md-0">
