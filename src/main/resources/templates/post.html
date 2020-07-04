@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>JobBoard &mdash; Website Template by Colorlib</title>
+    <title>당근나라</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -18,7 +18,7 @@
     
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body id="top">
 
@@ -52,7 +52,7 @@
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
               <li><a href=""></a></li>
               <li><a href="/">메인 화면</a></li>
-              <li><a href="/list">모든 물건</a></li>
+              <li><a href="/list?page=0">모든 물건</a></li>
               <li><a href="/mypage">내 정보</a></li>
             </ul>
           </nav>
@@ -88,7 +88,7 @@
     
     <section class="site-section">
       <div class="container">
-
+        <form class="p-4 p-md-5 border rounded" method="post" name="post" action="post">
         <div class="row align-items-center mb-5">
           <div class="col-lg-8 mb-4 mb-lg-0">
             <div class="d-flex align-items-center">
@@ -102,14 +102,13 @@
               <div class="col-6">
               </div>
               <div class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md">등록</a>
+                <input type="submit" class="btn btn-block btn-primary btn-md" value="등록">
               </div>
             </div>
           </div>
         </div>
         <div class="row mb-5">
           <div class="col-lg-12">
-            <form class="p-4 p-md-5 border rounded" method="post">
               <h3 class="text-black mb-5 border-bottom pb-2">물건 정보</h3>
               
               <div class="form-group">
@@ -121,40 +120,37 @@
 
               <div class="form-group">
                 <label for="name">이름</label>
-                <input type="text" class="form-control" id="name" placeholder="물건 이름">
+                <input type="text" class="form-control" id="name" name="name" placeholder="물건 이름">
               </div>
               <div class="form-group">
                 <label for="category">카테고리</label>
-                <select class="selectpicker border rounded" id="category" data-style="btn-black" data-width="100%" data-live-search="true" title="카테고리 선택">
-                      <option>의류</option>
-                      <option>가구/생활</option>
-                      <option>전자/가전</option>
-                      <option>뷰티/잡화</option>
-                      <option>완구/취미</option>
-                      <option>스포츠/레저</option>
-                      <option>도서</option>
-                      <option>기타</option>
+                <select class="selectpicker border rounded" id="category" name="category" data-style="btn-black" data-width="100%" data-live-search="true" title="카테고리 선택">
+                      <option value="의류">의류</option>
+                      <option value="가구/생활">가구/생활</option>
+                      <option value="전자/가전">전자/가전</option>
+                      <option value="뷰티/잡화">뷰티/잡화</option>
+                      <option value="완구/취미">완구/취미</option>
+                      <option value="스포츠/레저">스포츠/레저</option>
+                      <option value="도서">도서</option>
+                      <option value="기타">기타</option>
                     </select>
               </div>
               <div class="form-group">
                 <label for="price">가격</label>
-                <input type="text" class="form-control" id="price" placeholder="가격 (숫자만 입력)">
+                <input type="text" class="form-control" id="price" name="price" placeholder="가격 (숫자만 입력)">
               </div>
               <div class="form-group">
                 <label for="location">지역</label>
-                <input type="text" class="form-control" id="지역" placeholder="e.g. 서울, 부산, 강원">
+                <input type="text" class="form-control" id="location" name="location" placeholder="e.g. 서울, 부산, 강원">
               </div>
               <div class="form-group">
-                <label for="description">상세 설명</label>
-                <div class="editor" id="editor-1">
-                  <p></p>
-                </div>
+                <label for="description">상세 설명</label><br>
+                <textarea name="description" cols="123" rows="10" style="resize: none;"></textarea>
               </div>
-
-            </form>
           </div>
          
         </div>
+        </form>
       </div>
     </section>
 
